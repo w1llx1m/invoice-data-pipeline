@@ -3,11 +3,26 @@ import datetime as dt
 import re
 
 
-def  capitalize_title(df: pd.DataFrame) -> pd.Series:
-    cols_ToCapitalize = ['first_name', 'last_name', 'city']
-    return df[cols_ToCapitalize].all(axis=1).astype(str).str.capitalize()
+def capitalize_columns(df: pd.DataFrame) -> pd.DataFrame:
+    cols_to_capitalize = ['first_name', 'last_name', 'city']
+    df = df.copy()
+    df[cols_to_capitalize] = df[cols_to_capitalize].apply(
+        lambda col: col.astype(str).str.title()
+    )
+    return df
 
-def date_format(df: pd.DataFrame) -> pd.Series:
-    # date_ToFormat = ['invoice_date'] #dd/mm/yyyy
-    pass
+
+def email_format(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    df['email'] = df['email'].astype(str).str.lower()
+    return df
+
+
+def blank_removal(df: pd.DataFrame) -> pd.DataFrame:
+    cols_to_fill = ['stock_code', 'product_id']
+    df = df.copy()
+    df[cols_to_fill] = df[cols_to_fill].apply(
+        lambda col: col.astype(str).str.strip()
+    )
+    return df
 
