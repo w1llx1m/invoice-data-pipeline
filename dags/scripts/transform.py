@@ -1,6 +1,4 @@
 import pandas as pd
-import datetime as dt
-import re
 
 
 def capitalize_columns(df: pd.DataFrame) -> pd.DataFrame:
