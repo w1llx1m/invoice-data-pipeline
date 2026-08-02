@@ -33,9 +33,11 @@ def invoice_pipeline():
     @task
     def extract_task() -> str:
         df = extract()
-        output_path = "/opt/airflow/data/interim/extracted.csv"
+        output_path = Path("/opt/airflow/data/interim/extracted.csv")
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
         df.to_csv(output_path, index=False)
-        return output_path  # só o CAMINHO vai pelo XCom, não o DataFrame inteiro
+        return str(output_path)  # só o CAMINHO vai pelo XCom, não o DataFrame inteiro
 
     @task
     def validate_and_split_task(input_path: str) -> dict:
