@@ -254,3 +254,19 @@
 [2026-08-02T02:33:00.347+0000] {logging_mixin.py:190} INFO - [2026-08-02T02:33:00.345+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2026-08-02T02:33:00.372+0000] {logging_mixin.py:190} INFO - [2026-08-02T02:33:00.372+0000] {dag.py:4180} INFO - Setting next_dagrun for invoice_data_pipeline to 2026-08-02 00:00:00+00:00, run_after=2026-08-03 00:00:00+00:00
 [2026-08-02T02:33:00.395+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/invoice_data_pipeline_dag.py took 0.517 seconds
+[2026-08-02T02:33:30.743+0000] {processor.py:186} INFO - Started process (PID=475) to work on /opt/airflow/dags/invoice_data_pipeline_dag.py
+[2026-08-02T02:33:30.745+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/invoice_data_pipeline_dag.py for tasks to queue
+[2026-08-02T02:33:30.748+0000] {logging_mixin.py:190} INFO - [2026-08-02T02:33:30.748+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/invoice_data_pipeline_dag.py
+[2026-08-02T02:33:31.099+0000] {logging_mixin.py:190} INFO - Tables created successfully.
+[2026-08-02T02:33:31.108+0000] {processor.py:925} INFO - DAG(s) 'invoice_data_pipeline' retrieved from /opt/airflow/dags/invoice_data_pipeline_dag.py
+[2026-08-02T02:33:31.137+0000] {logging_mixin.py:190} INFO - [2026-08-02T02:33:31.136+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-08-02T02:33:31.159+0000] {logging_mixin.py:190} INFO - [2026-08-02T02:33:31.159+0000] {dag.py:4180} INFO - Setting next_dagrun for invoice_data_pipeline to 2026-08-02 00:00:00+00:00, run_after=2026-08-03 00:00:00+00:00
+[2026-08-02T02:33:31.182+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/invoice_data_pipeline_dag.py took 0.448 seconds
+[2026-08-02T02:34:01.719+0000] {processor.py:186} INFO - Started process (PID=481) to work on /opt/airflow/dags/invoice_data_pipeline_dag.py
+[2026-08-02T02:34:01.721+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/invoice_data_pipeline_dag.py for tasks to queue
+[2026-08-02T02:34:01.725+0000] {logging_mixin.py:190} INFO - [2026-08-02T02:34:01.725+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/invoice_data_pipeline_dag.py
+[2026-08-02T02:34:02.075+0000] {logging_mixin.py:190} INFO - Tables created successfully.
+[2026-08-02T02:34:02.085+0000] {processor.py:925} INFO - DAG(s) 'invoice_data_pipeline' retrieved from /opt/airflow/dags/invoice_data_pipeline_dag.py
+[2026-08-02T02:34:02.116+0000] {logging_mixin.py:190} INFO - [2026-08-02T02:34:02.115+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-08-02T02:34:02.141+0000] {logging_mixin.py:190} INFO - [2026-08-02T02:34:02.141+0000] {dag.py:4180} INFO - Setting next_dagrun for invoice_data_pipeline to 2026-08-02 00:00:00+00:00, run_after=2026-08-03 00:00:00+00:00
+[2026-08-02T02:34:02.168+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/invoice_data_pipeline_dag.py took 0.456 seconds
