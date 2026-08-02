@@ -9,6 +9,11 @@ def capitalize_columns(df: pd.DataFrame) -> pd.DataFrame:
     )
     return df
 
+def transform_dates(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    df['invoice_date'] = pd.to_datetime(df['invoice_date'], dayfirst=True, format='%d/%m/%Y')
+    return df
+
 
 def email_format(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()

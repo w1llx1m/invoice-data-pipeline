@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def validate_required_fields(df: pd.DataFrame) -> pd.Series:
-    required_cols = ['first_name', 'last_name','email', 'product_id','qty','amount','invoice_date']
+    required_cols = ['first_name', 'last_name','email', 'product_id','quantity','amount','invoice_date']
     return df[required_cols].notna().all(axis=1)
 
 def validate_email(df: pd.DataFrame) -> pd.Series:
@@ -13,7 +13,7 @@ def validate_amount(df: pd.DataFrame) -> pd.Series:
     return df['amount'] > 0
 
 def validate_quantity(df: pd.DataFrame) -> pd.Series:
-    return df['qty'] > 0
+    return df['quantity'] > 0
 
 def validate_all(df: pd.DataFrame) -> pd.Series:
     mask_required = validate_required_fields(df)

@@ -6,7 +6,8 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 FILE_PATH = BASE_DIR/"data"/"raw"/"invoices_20260724.csv"   
 
 def extract():
-   ret = pd.read_csv(FILE_PATH) 
+   ret = pd.read_csv(FILE_PATH)
+   ret = ret.rename(columns={"qty": "quantity"})
    return ret
 
 

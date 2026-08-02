@@ -6,7 +6,7 @@ import pandas as pd
 
 from scripts.extract import extract
 from scripts.validate import validated_split
-from scripts.transform import capitalize_columns, email_format, blank_removal
+from scripts.transform import capitalize_columns, email_format, transform_dates, blank_removal
 from scripts.load import get_engine, load_data
 from database.init_db import create_tables
 
@@ -42,10 +42,8 @@ def invoice_pipeline():
     @task
     def validate_and_split_task(input_path: str) -> dict:
         df = pd.read_csv(input_path)
-        mask_approved = validated_split(df)
 
-        df_approved = df[mask_approved].copy()
-        df_reproved = df[~mask_approved].copy()
+        df_approved, df_reproved = validated_split(df)
 
         approved_path = "/opt/airflow/data/interim/approved.csv"
         reproved_path = "/opt/airflow/data/interim/reproved.csv"
@@ -60,6 +58,7 @@ def invoice_pipeline():
         df = pd.read_csv(paths["approved"])
 
         df = capitalize_columns(df)
+        df = transform_dates(df)
         df = email_format(df)
         df = blank_removal(df)
 
